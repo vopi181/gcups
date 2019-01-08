@@ -30,7 +30,7 @@ func main() {
     for _, dest := range printers.Dests {
         fmt.Printf("%v (%v)\n", dest.Name, dest.Status())
     }
-    dest[0].PrintFile("/tmp/test.txt", "Hello From The Otherside")
+    printers.Dest[0].PrintFile("/tmp/test.txt", "Hello From The Otherside")
 
 }
 ```
