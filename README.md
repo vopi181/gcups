@@ -4,14 +4,14 @@
 
 ## Info
 
-This is an experimental library that provides limited bindings to CUPS. This is my first attempt at using CGO.
+This is an experimental library that provides limited bindings to CUPS. 
 
-Currently only working on OS X and printing test pages.
+Currently only working on OS X and can print files
 
 ## Usage
 
 ```shell
-go get https://github.com/adrianfalleiro/go-cups
+go get https://github.com/vopi181/gcups
 ```
 
 ## Example
@@ -33,3 +33,7 @@ func main() {
 
 }
 ```
+
+## Credits
+
+Forked from ![adrianfallerio's go-cups](https://github.com/adrianfalleiro/go-cups)

@@ -20,6 +20,7 @@ type Dest struct {
 
 // PrintFile prints a file
 // TODO: Complete implementation
+// Really doesn't need to be implemented this way, cups automagically checks for MIME type, etc - vopi
 // func (d *Dest) PrintFile(filename, mimeType string) int {
 // 	// check mime type
 // 	// check file
@@ -85,4 +86,34 @@ func (d *Dest) TestPrint() int {
 		C.CString("Test Print"), numOptions, options)
 
 	return int(jobID)
+}
+
+// TestPrintCustom prints a custom CUPS testpage given the file path
+func (d *Dest) TestPrintCustom(filepath string) int {
+	var numOptions C.int
+	var options *C.cups_option_t
+	var jobID C.int
+
+	// resolve path/to/test/file
+	// TODO: find the location of this file on linux/bsd/osx
+	osxTest := filepath
+
+	// Print a single file
+	jobID = C.cupsPrintFile(C.CString(d.Name), C.CString(osxTest),
+		C.CString("Test Print"), numOptions, options)
+
+	return int(jobID)
+}
+
+// PrintFile prints a single file given the file path and job name
+func (d *Dest) PrintFile(filepath string, jobName string) int {
+	var numOptions C.int
+	var options *C.cups_option_t
+	var jobID C.int
+
+	jobID = C.cupsPrintFile(C.CString(d.Name), C.CString(filepath),
+		C.CString(jobName), numOptions, options)
+
+	return int(jobID)
+
 }
