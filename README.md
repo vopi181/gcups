@@ -37,4 +37,4 @@ func main() {
 
 ## Credits
 
-Forked from ![adrianfallerio's go-cups](https://github.com/adrianfalleiro/go-cups)
+Forked from [adrianfallerio's go-cups](https://github.com/adrianfalleiro/go-cups)
